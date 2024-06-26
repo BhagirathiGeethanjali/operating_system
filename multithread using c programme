@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<pthread.h>
+void *myThreadFun(void *vargp)
+{
+sleep(1);
+printf("Printing GeeksQuiz from Thread \n");
+return NULL;
+}
+int main()
+{
+pthread_t thread_id;
+printf("Before Thread\n");
+pthread_create(&thread_id, NULL, myThreadFun, NULL);
+pthread_join(thread_id, NULL);
+printf("After Thread\n");
+exit(0);
+}
+Result: Thus, the c program for multithreading is executed successfully.
+Sample Input: No input is required for this program.
+Sample Output:
+Thread 0 is executing task A
+Thread 1 is executing task B
+Thread 2 is executing task C
+Thread 3 is executing task D
+All threads have finished execution.
